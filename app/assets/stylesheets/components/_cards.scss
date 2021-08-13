@@ -1,0 +1,13 @@
+.carte {
+  width: 250px;
+  height: 400px;
+  margin: 0px auto;
+}
+img {
+  width: 100%;
+}
+@media (max-width: 600px) {
+  .img {
+    width: 80%;
+  }
+}
