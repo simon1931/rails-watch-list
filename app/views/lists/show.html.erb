@@ -1,13 +1,17 @@
 <div class="container">
+  <%= link_to "Back to lists", lists_path, class: "btn btn-danger" %>
   <h1><%= @list.name %></h1>
   <h5>Bookmarks</h5>
   <% @list.bookmarks.each do |bookmark| %>
     <p>
       <strong><%= bookmark.movie.title %></strong>
       <%= bookmark.comment %>
-    </p>
+      <%= link_to bookmark_path(bookmark), method: :delete, data: {confirm: "Are u sure?"} do %>
+        <i class="fas fa-trash-alt"></i>
+      <% end %>
+     </p>
   <% end %>
 
-<%= link_to "Retour aux lists", lists_path, class: "btn btn-danger" %>
-<%= link_to "Ajouter Bookmark", new_list_bookmark_path(@list), class: "btn btn-primary" %>
+
+<%= link_to "Add Bookmark", new_list_bookmark_path(@list), class: "btn btn-primary" %>
 </div>
